@@ -32,10 +32,7 @@ message(sprintf("Run time: %s\nR version: %s", Sys.time(), R.Version()$version.s
 
 > Due to security concerns with the exchange of R code, your code will not be run during the evaluation by your classmates. Please be sure that if they download the repo, they will be able to view the compiled HTML version of your analysis. 
 
-For this assignment I analyzed the provided data to determine what activity an individual perform.
-To do this I made use of caret and randomForest, this allowed me to generate correct answers for
-each of the 20 test data cases provided in this assignment.  I made use of a seed value for 
-consistent results.
+For this assignment the provided data was analyzed to determine activities were performed by an individual. Libraries like caret and randomForest are used to generate answers for the assignment questions.
 
 
 ```{r}

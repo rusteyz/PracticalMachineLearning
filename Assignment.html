@@ -64,7 +64,7 @@ img {
 </div>
 
 
-<pre><code>## Run time: 2015-04-23 15:46:13
+<pre><code>## Run time: 2015-04-25 13:22:15
 ## R version: R version 3.2.0 (2015-04-16)</code></pre>
 <blockquote>
 <p><strong>Background</strong> Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement - a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website here: <a href="http://groupware.les.inf.puc-rio.br/har" class="uri">http://groupware.les.inf.puc-rio.br/har</a> (see the section on the Weight Lifting Exercise Dataset).</p>
@@ -105,7 +105,7 @@ img {
 <blockquote>
 <p>Due to security concerns with the exchange of R code, your code will not be run during the evaluation by your classmates. Please be sure that if they download the repo, they will be able to view the compiled HTML version of your analysis.</p>
 </blockquote>
-<p>For this assignment I analyzed the provided data to determine what activity an individual perform. To do this I made use of caret and randomForest, this allowed me to generate correct answers for each of the 20 test data cases provided in this assignment. I made use of a seed value for consistent results.</p>
+<p>For this assignment the provided data was analyzed to determine activities were performed by an individual. Libraries like caret and randomForest are used to generate answers for the assignment questions.</p>
 <pre class="r"><code>library(Hmisc)</code></pre>
 <pre><code>## Loading required package: grid
 ## Loading required package: lattice
@@ -221,35 +221,35 @@ confusionMatrix(predictions2,test$classe)</code></pre>
 ## 
 ##           Reference
 ## Prediction    A    B    C    D    E
-##          A 1394    2    0    0    0
-##          B    0  947    4    0    0
-##          C    0    0  851    6    0
-##          D    0    0    0  797    3
-##          E    1    0    0    1  898
+##          A 1393    7    0    0    0
+##          B    2  939    6    0    0
+##          C    0    3  848    5    0
+##          D    0    0    1  799    3
+##          E    0    0    0    0  898
 ## 
 ## Overall Statistics
 ##                                          
-##                Accuracy : 0.9965         
-##                  95% CI : (0.9945, 0.998)
+##                Accuracy : 0.9945         
+##                  95% CI : (0.992, 0.9964)
 ##     No Information Rate : 0.2845         
 ##     P-Value [Acc &gt; NIR] : &lt; 2.2e-16      
 ##                                          
-##                   Kappa : 0.9956         
+##                   Kappa : 0.993          
 ##  Mcnemar's Test P-Value : NA             
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: A Class: B Class: C Class: D Class: E
-## Sensitivity            0.9993   0.9979   0.9953   0.9913   0.9967
-## Specificity            0.9994   0.9990   0.9985   0.9993   0.9995
-## Pos Pred Value         0.9986   0.9958   0.9930   0.9963   0.9978
-## Neg Pred Value         0.9997   0.9995   0.9990   0.9983   0.9993
+## Sensitivity            0.9986   0.9895   0.9918   0.9938   0.9967
+## Specificity            0.9980   0.9980   0.9980   0.9990   1.0000
+## Pos Pred Value         0.9950   0.9916   0.9907   0.9950   1.0000
+## Neg Pred Value         0.9994   0.9975   0.9983   0.9988   0.9993
 ## Prevalence             0.2845   0.1935   0.1743   0.1639   0.1837
-## Detection Rate         0.2843   0.1931   0.1735   0.1625   0.1831
-## Detection Prevalence   0.2847   0.1939   0.1748   0.1631   0.1835
-## Balanced Accuracy      0.9994   0.9984   0.9969   0.9953   0.9981</code></pre>
-<div id="conclusions-and-test-data-submission" class="section level2">
-<h2>Conclusions and Test Data Submission</h2>
+## Detection Rate         0.2841   0.1915   0.1729   0.1629   0.1831
+## Detection Prevalence   0.2855   0.1931   0.1746   0.1637   0.1831
+## Balanced Accuracy      0.9983   0.9937   0.9949   0.9964   0.9983</code></pre>
+<div id="conclusion-and-project-data-submission" class="section level2">
+<h2>Conclusion and Project Data Submission</h2>
 <p>Confusion matrix output show that the developed model is quite accurate.</p>
 <p>Following Coursera code creates the files for project submission.</p>
 <pre class="r"><code>pml_write_files = function(x){
